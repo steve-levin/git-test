@@ -1,11 +1,4 @@
-const app = document.querySelector('#app')
-
-app.innerHTML = `
-  <h1>🚀 My First Vite App</h1>
-  <p>This is running with auto-refresh.</p>
-  <button id="btn">Click me</button>
+document.querySelector('#app').innerHTML = `
+  <h1>🚀 AUTO DEPLOY TEST SUCCESS</h1>
+  <p>If you see this, GitHub → Vercel is working.</p>
 `
-
-document.getElementById("btn").addEventListener("click", () => {
-  document.getElementById("btn").innerText = "It worked!"
-})
