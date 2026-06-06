@@ -2,13 +2,14 @@ import { renderLayout } from '../layout/layout.js'
 
 renderLayout({
   activePage: 'contact',
+  variant: 'interior',
+  pageTitle: 'Contact',
   content: {
-    title: 'Contact — git-test',
+    title: 'Contact — United Realty',
     html: `
-      <section class="section">
-        <h1>Contact</h1>
-        <p class="lead">Send a message — this form is a placeholder for now.</p>
-        <form class="contact-form" id="contact-form">
+      <section>
+        <p>Get in touch with our team. We will respond within one business day.</p>
+        <form class="contact-form" id="contact-form" style="margin-top: 2rem;">
           <label>
             Name
             <input type="text" name="name" autocomplete="name" required>
@@ -19,9 +20,9 @@ renderLayout({
           </label>
           <label>
             Message
-            <textarea name="message" rows="4" required></textarea>
+            <textarea name="message" rows="5" required></textarea>
           </label>
-          <button class="cta" type="submit">Send message</button>
+          <button class="btn btn--primary" type="submit">Send Message</button>
         </form>
       </section>
     `,

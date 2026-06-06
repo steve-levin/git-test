@@ -1,0 +1,3 @@
+import { renderServicePage } from './service-page.js'
+
+renderServicePage('property-management')
