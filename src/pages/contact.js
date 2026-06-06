@@ -1,4 +1,4 @@
-import { renderLayout } from '../components/layout.js'
+import { renderLayout } from '../layout/layout.js'
 
 renderLayout({
   activePage: 'contact',

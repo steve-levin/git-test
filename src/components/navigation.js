@@ -1,21 +1,11 @@
-const NAV_ITEMS = [
+export const NAV_ITEMS = [
   { id: 'home', label: 'Home', href: '/' },
   { id: 'about', label: 'About', href: '/about/' },
+  { id: 'services', label: 'Services', href: '/services/' },
   { id: 'contact', label: 'Contact', href: '/contact/' },
 ]
 
-export function createHeader(activePage) {
-  const header = document.createElement('header')
-  header.className = 'site-header'
-
-  const inner = document.createElement('div')
-  inner.className = 'site-header__inner'
-
-  const logo = document.createElement('a')
-  logo.className = 'site-logo'
-  logo.href = '/'
-  logo.textContent = 'git-test'
-
+export function createNavigation(activePage) {
   const nav = document.createElement('nav')
   nav.className = 'site-nav'
   nav.setAttribute('aria-label', 'Main')
@@ -30,7 +20,5 @@ export function createHeader(activePage) {
     nav.appendChild(link)
   }
 
-  inner.append(logo, nav)
-  header.appendChild(inner)
-  return header
+  return nav
 }

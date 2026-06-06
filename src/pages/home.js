@@ -1,4 +1,4 @@
-import { renderLayout } from '../components/layout.js'
+import { renderLayout } from '../layout/layout.js'
 
 const labels = ['Click me', 'It works!', 'Again?', 'One more time']
 let labelIndex = 0

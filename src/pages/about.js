@@ -1,4 +1,4 @@
-import { renderLayout } from '../components/layout.js'
+import { renderLayout } from '../layout/layout.js'
 
 renderLayout({
   activePage: 'about',
@@ -11,7 +11,7 @@ renderLayout({
       </section>
       <section class="section">
         <h2>Structure</h2>
-        <p>Pages live in <code>src/pages/</code>, shared UI in <code>src/components/</code>, and styles in <code>src/styles/</code>. Each route has its own HTML entry point for clean file-based navigation.</p>
+        <p>Pages live in <code>src/pages/</code>, shared UI in <code>src/components/</code>, layout in <code>src/layout/</code>, and styles in <code>src/styles/</code>. Each route has its own HTML entry point for clean file-based navigation.</p>
       </section>
     `,
   },
