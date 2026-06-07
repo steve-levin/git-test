@@ -1,38 +1,37 @@
 import { useState } from 'react'
 import { Menu } from 'lucide-react'
 import { Logo } from '@/components/Logo'
-import { DesktopNav, HeaderActions } from '@/components/layout/DesktopNav'
+import { TopBar } from '@/components/layout/TopBar'
+import { MainNav } from '@/components/layout/MainNav'
 import { MobileMenu } from '@/components/layout/MobileMenu'
+import { Container } from '@/components/layout/Container'
 
-type HeaderProps = {
+type SiteHeaderProps = {
   activePage: string
 }
 
-export function Header({ activePage }: HeaderProps) {
+export function SiteHeader({ activePage }: SiteHeaderProps) {
   const [mobileOpen, setMobileOpen] = useState(false)
 
   return (
-    <>
-      <header className="sticky top-0 z-[100] border-b border-border bg-white">
-        <div className="mx-auto flex h-[4.5rem] max-w-6xl items-center gap-6 px-6">
+    <header className="sticky top-0 z-50 bg-white">
+      <TopBar />
+      <div className="border-b border-slate-200">
+        <Container className="flex h-16 items-center justify-between gap-6">
           <Logo />
-          <div className="flex-1">
-            <DesktopNav activePage={activePage} />
-          </div>
-          <HeaderActions />
+          <MainNav activePage={activePage} />
           <button
             type="button"
-            className="ml-auto text-navy lg:hidden"
+            className="ml-auto text-slate-800 lg:hidden"
             aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={mobileOpen}
-            aria-controls="mobile-menu"
             onClick={() => setMobileOpen((value) => !value)}
           >
             <Menu className="size-6" />
           </button>
-        </div>
-      </header>
+        </Container>
+      </div>
       <MobileMenu open={mobileOpen} activePage={activePage} onClose={() => setMobileOpen(false)} />
-    </>
+    </header>
   )
 }

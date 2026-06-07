@@ -1,19 +1,22 @@
 import { Link } from 'react-router-dom'
 import { cn } from '@/lib/utils'
+import { COMPANY } from '@/data/company'
 
 type LogoProps = {
   className?: string
-  light?: boolean
+  size?: 'sm' | 'md'
 }
 
-export function Logo({ className, light = false }: LogoProps) {
+export function Logo({ className, size = 'md' }: LogoProps) {
+  const markSize = size === 'sm' ? 'size-7 text-[10px]' : 'size-9 text-xs'
+
   return (
-    <Link to="/" className={cn('flex items-center gap-2', className)} aria-label="United Realty home">
-      <span className="grid size-9 place-items-center bg-brand text-xs font-extrabold text-white">UR</span>
-      <span className={cn('text-xs font-bold leading-tight tracking-wider', light ? 'text-white' : 'text-navy')}>
-        UNITED
-        <br />
-        REALTY
+    <Link to="/" className={cn('flex items-center gap-2.5', className)} aria-label={`${COMPANY.name} home`}>
+      <span className={cn('grid place-items-center bg-brand font-bold text-white', markSize)}>
+        {COMPANY.shortName}
+      </span>
+      <span className={cn('font-semibold uppercase leading-tight tracking-wide text-slate-900', size === 'sm' ? 'text-[10px]' : 'text-xs')}>
+        {COMPANY.name}
       </span>
     </Link>
   )
